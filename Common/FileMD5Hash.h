@@ -41,6 +41,16 @@
 // Function declaration
 //---------------------------------------------------------
 
+// define this here and not in pch to avoid
+// potential transitive dependecies from other pods
+// that don't work with same pch themselves
+
+#if defined(__cplusplus)
+#define FILEMD5HASH_EXTERN extern "C"
+#else
+#define FILEMD5HASH_EXTERN extern
+#endif
+
 FILEMD5HASH_EXTERN CFStringRef FileMD5HashCreateWithPath(CFStringRef filePath, 
                                                          size_t chunkSizeForReadingData);
 

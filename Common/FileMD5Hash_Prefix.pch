@@ -41,8 +41,9 @@
 //---------------------------------------------------------
 
 // Extern
-#if defined(__cplusplus)
-    #define FILEMD5HASH_EXTERN extern "C"
-#else
-    #define FILEMD5HASH_EXTERN extern
-#endif
+// Don't use macros in header files due to potential transitive dependecies from other pods
+//#if defined(__cplusplus)
+//    #define FILEMD5HASH_EXTERN extern "C"
+//#else
+//    #define FILEMD5HASH_EXTERN extern
+//#endif
